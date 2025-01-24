@@ -9,8 +9,10 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Badge } from "@/components/ui/badge";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
-import { BarChart3, PieChart as PieChartIcon, LineChart as LineChartIcon, TrendingUp, Wallet, ArrowUpRight, ArrowDownRight, Activity } from "lucide-react";
-import { addMonths, isWithinInterval, parseISO, startOfMonth, endOfMonth } from "date-fns";
+import { BarChart3, PieChart as PieChartIcon, LineChart as LineChartIcon, TrendingUp, Wallet, ArrowUpRight, ArrowDownRight, Activity, CalendarIcon } from "lucide-react";
+import { addMonths, isWithinInterval, parseISO, startOfMonth, endOfMonth, format } from "date-fns";
+import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
+import { Button } from "@/components/ui/button";
 
 // Chart components with proper default parameters
 const CustomXAxis = ({
@@ -163,12 +165,22 @@ export default function Home() {
                 <SelectItem value="1m">Last Month</SelectItem>
               </SelectContent>
             </Select>
-            <Calendar
-              mode="single"
-              selected={selectedDate}
-              onSelect={setSelectedDate}
-              className="rounded-md border"
-            />
+            <Popover>
+              <PopoverTrigger asChild>
+                <Button variant="outline" className="w-[280px] justify-start text-left font-normal">
+                  <CalendarIcon className="mr-2 h-4 w-4" />
+                  {selectedDate ? format(selectedDate, 'PPP') : <span>Pick a date</span>}
+                </Button>
+              </PopoverTrigger>
+              <PopoverContent className="w-auto p-0" align="end">
+                <Calendar
+                  mode="single"
+                  selected={selectedDate}
+                  onSelect={setSelectedDate}
+                  initialFocus
+                />
+              </PopoverContent>
+            </Popover>
           </div>
         </div>
       </header>
