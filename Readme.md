@@ -67,51 +67,15 @@ This is a Portfolio Analytics Dashboard built using Next.js for the frontend, No
 
 2. **Install Dependencies:**
 
-   - For the frontend:
-     ```bash
-     cd frontend
-     npm install
-     ```
-   - For the backend:
-     ```bash
-     cd backend
-     npm install
-     ```
-
-3. **Set Environment Variables:**
-
-   - Create a `.env` file in the `backend` folder and configure the following variables:
-     ```env
-     PORT=5000
-     MONGO_URI=<your-mongo-db-uri>
-     ```
-
-4. **Run the Backend:**
-
    ```bash
-   cd backend
-   npm start
+   npm install
    ```
 
-   The backend will be available at `http://localhost:5000`.
-
-5. **Run the Frontend:**
+3. **Run the Code:**
    ```bash
-   cd frontend
    npm run dev
    ```
    The frontend will be available at `http://localhost:3000`.
-
----
-
-## Directory Structure
-
-```
-portfolio-analytics-dashboard/
-├── frontend/       # Frontend application (Next.js)
-├── backend/        # Backend API (Node.js/Express)
-├── README.md       # Project documentation
-```
 
 ---
 
@@ -121,7 +85,7 @@ portfolio-analytics-dashboard/
   - Strategy performance.
   - Portfolio allocation.
   - Recent trades.
-- Data is stored as a JSON file in the `backend/data/` directory for initial testing.
+- Data is stored as a JSON.
 
 ---
 
