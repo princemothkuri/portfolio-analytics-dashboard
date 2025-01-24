@@ -61,7 +61,7 @@ This is a Portfolio Analytics Dashboard built using Next.js for the frontend, No
 1. **Clone the Repository:**
 
    ```bash
-   git clone <repository-url>
+   git clone https://github.com/princemothkuri/portfolio-analytics-dashboard.git
    cd portfolio-analytics-dashboard
    ```
 
